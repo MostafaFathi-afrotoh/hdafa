@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقهى بن مختص - رحلة القهوة الفاخرة</title>
+    <style>
+        :root {
+            --primary-color: #3b2314;
+            --accent-color: #c29b61;
+            --bg-color: #fcf9f5;
+            --text-color: #2c221e;
+            --light-bg: #f4efe6;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Common Styles */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* 1. Hero Banner */
+        #hero_banner {
+            background: linear-gradient(rgba(59, 35, 20, 0.8), rgba(59, 35, 20, 0.8)), url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        #hero_banner h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        #hero_banner p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #e0d7cd;
+        }
+
+        /* 2. Signature Beans */
+        #signature_beans {
+            background-color: var(--white);
+        }
+
+        .beans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .bean-card {
+            background-color: var(--bg-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid var(--light-bg);
+        }
+
+        .bean-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(59, 35, 20, 0.1);
+        }
+
+        .bean-img {
+            height: 200px;
+            background-color: var(--light-bg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .bean-info {
+            padding: 25px;
+        }
+
+        .bean-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .roast-level {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .flavor-notes {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* 3. Brewing Tools */
+        #brewing_tools {
+            background-color: var(--light-bg);
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .tool-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+            transition: var(--transition);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tool-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .price {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* 4. Roastery Story */
+        #roastery_story {
+            background-color: var(--white);
+        }
+
+        .story-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .story-video {
+            width: 100%;
+            height: 350px;
+            background: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
+            border-radius: 15px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .timeline {
+            border-right: 2px solid var(--accent-color);
+            padding-right: 20px;
+        }
+
+        .timeline-item {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .timeline-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .stat-box h3 {
+            color: var(--accent-color);
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        /* 5. Customer Reviews */
+        #customer_reviews {
+            background-color: var(--light-bg);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .stars {
+            color: #f39c12;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .review-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .customer-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .customer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .customer-details h4 {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .customer-details span {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #hero_banner h1 {
+                font-size: 2.5rem;
+            }
+            
+            .story-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. لافتة الترحيب الرئيسية (Hero Banner) -->
+    <header id="hero_banner">
+        <div class="container">
+            <div class="hero-content">
+                <div class="logo">مقهى بن مختص</div>
+                <h1>رحلة القهوة الفاخرة من المزرعة إلى كوبك</h1>
+                <p>نختار لك أجود حبوب البن المختص من حول العالم، ونحمصها بعناية لنمنحك تجربة استثنائية لا تُنسى.</p>
+                <a href="#signature_beans" class="btn">اطلب الآن</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. محاصيل البن المميزة (Signature Beans) -->
+    <section id="signature_beans">
+        <div class="container">
+            <h2 class="section-title">محاصيل البن المميزة</h2>
+            <div class="beans-grid">
+                
+                <div class="bean-card">
+                    <div class="bean-img" style="background-image: url('https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="bean-info">
+                        <h3>إثيوبيا ييرجاشيف</h3>
+                        <div class="roast-level">تحميص خفيف (مناسب للفلتر)</div>
+                        <div class="flavor-notes">الإيحاءات: الياسمين، الخوخ، الحمضيات المنعشة</div>
+                        <button class="btn">إضافة للسلة - 48 ر.س</button>
+                    </div>
+                </div>
+
+                <div class="bean-card">
+                    <div class="bean-img" style="background-image: url('https://images.unsplash.com/photo-1611854779393-1b2da9d401fe?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="bean-info">
+                        <h3>كولومبيا هوِلا</h3>
+                        <div class="roast-level">تحميص متوسط (مناسب للإسبريسو)</div>
+                        <div class="flavor-notes">الإيحاءات: الشوكولاتة الداكنة، الكراميل، المكسرات</div>
+                        <button class="btn">إضافة للسلة - 52 ر.س</button>
+                    </div>
+                </div>
+
+                <div class="bean-card">
+                    <div class="bean-img" style="background-image: url('https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=600&q=80');"></div>
+                    <div class="bean-info">
+                        <h3>غواتيمالا أنتيغوا</h3>
+                        <div class="roast-level">تحميص متوسط إلى داكن</div>
+                        <div class="flavor-notes">الإيحاءات: الفواكه المجففة، الشوكولاتة، التوابل الخفيفة</div>
+                        <button class="btn">إضافة للسلة - 55 ر.س</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. أدوات التحضير المنزلي (Brewing Tools) -->
+    <section id="brewing_tools">
+        <div class="container">
+            <h2 class="section-title">أدوات التحضير المنزلي</h2>
+            <div class="tools-grid">
+                
+                <div class="tool-card">
+                    <div class="tool-img" style="background-image: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=500&q=80');"></div>
+                    <h3>إبريق تقطير V60 زجاجي</h3>
+                    <div class="price">85 ر.س</div>
+                    <button class="btn">عرض التفاصيل</button>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-img" style="background-image: url('https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=500&q=80');"></div>
+                    <h3>ميزان قهوة رقمي مع مؤقت</h3>
+                    <div class="price">120 ر.س</div>
+                    <button class="btn">عرض التفاصيل</button>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-img" style="background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80');"></div>
+                    <h3>طاحونة قهوة يدوية احترافية</h3>
+                    <div class="price">210 ر.س</div>
+                    <button class="btn">عرض التفاصيل</button>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-img" style="background-image: url('https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=500&q=80');"></div>
+                    <h3>إبريق تسخين بعنق الگوء</h3>
+                    <div class="price">180 ر.س</div>
+                    <button class="btn">عرض التفاصيل</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. قصة التحميص والجودة (Roastery Story) -->
+    <section id="roastery_story">
+        <div class="container">
+            <h2 class="section-title">قصة التحميص والجودة</h2>
+            <div class="story-container">
+                <div class="story-video">
+                    <div class="play-btn">▶</div>
+                </div>
+                <div class="story-content">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>1. الانتقاء اليدوي</h4>
+                            <p>نختار حبات البن الناضجة فقط من مزارع عالية الارتفاع تطبق معايير التجارة العادلة.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>2. التحميص الدقيق</h4>
+                            <p>نستخدم أحدث محمصة عالمية مع برامج تحميص مخصصة لإبراز النكهات الفريدة لكل محصول.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>3. التعبئة والحفظ</h4>
+                            <p>يُعبأ البن في أكياس مزودة بصمام أحادي الاتجاه للحفاظ على النكهة والطازجة لأقصى فترة ممكنة.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <h3>100%</h3>
+                            <p>بن مختص</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3>15+</h3>
+                            <p>مزارع شريكة</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3>48ساعة</h3>
+                            <p>من التحميص لبابك</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. آراء عشاق القهوة (Customer Reviews) -->
+    <section id="customer_reviews">
+        <div class="container">
+            <h2 class="section-title">آراء عشاق القهوة</h2>
+            <div class="reviews-grid">
+                
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"محصول إثيوبيا لديهم عالمي بكل ما تحمله الكلمة من معنى! الحمضية متوازنة والإيحاءات واضحة جداً في الـ V60."</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80');"></div>
+                        <div class="customer-details">
+                            <h4>سارة أحمد</h4>
+                            <span>مختصة قهوة مقطرة</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"سرعة التوصيل وجودة تغليف البن تفوق التوقعات. استمتعت بكوب إسبريسو غني بالكريما والايحاءات الفاخرة."</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80');"></div>
+                        <div class="customer-details">
+                            <h4>محمد الشمري</h4>
+                            <span>عاشق الإسبريسو</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"أفضل محمصة تعاملت معها، وطلبت أدوات التحضير المنزلي ووصلتني بحالة ممتازة مع شرح مبسط للتحضير."</p>
+                    <div class="customer-info">
+                        <div class="customer-avatar" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80');"></div>
+                        <div class="customer-details">
+                            <h4>خالد بن سلطان</h4>
+                            <span>باريستا منزلي</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة © مقهى بن مختص 2023</p>
+        </div>
+    </footer>
+
+</body>
+</html>

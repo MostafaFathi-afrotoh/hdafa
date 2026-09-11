@@ -1,0 +1,5 @@
+system,pass_rate,avg_coverage,avg_retries,avg_time
+HDAFA,100.0,100.0,0.0,10.79
+Multi-No-Validator,100.0,100.0,0.0,11.81
+Single-Agent,100.0,85.0,0.0,9.78
+Single+Validator,92.86,84.76,0.14,11.0

@@ -1,0 +1,92 @@
+{
+  "schema": {
+    "page_id": "e_commerce_store",
+    "page_title": "متجر إلكتروني متكامل",
+    "sections": [
+      {
+        "id": "navigation_bar",
+        "name": "شريط التنقل العلوي",
+        "components": [
+          "شعار المتجر",
+          "روابط الاقسام الرئيسية",
+          "شريط البحث السريع",
+          "أيقونة المفضلة",
+          "زر حساب المستخدم"
+        ],
+        "purpose": "تسهيل التنقل والوصول السريع لأقسام المتجر المختلفة"
+      },
+      {
+        "id": "hero_banner",
+        "name": "القسم الرئيسي واللافتات",
+        "components": [
+          "صورة العرض الكبرى المتحركة",
+          "عنوان الترويج الرئيسي",
+          "زر التسوق الآن"
+        ],
+        "purpose": "جذب انتباه الزوار للعروض والمنتجات المميزة حديثاً"
+      },
+      {
+        "id": "product_catalog",
+        "name": "قائمة المنتجات",
+        "components": [
+          "فلاتر البحث والتصنيف",
+          "بطاقة المنتج",
+          "زر إضافة إلى السلة",
+          "شارة التخفيضات"
+        ],
+        "purpose": "عرض المنتجات المتاحة بشكل منظم مع إمكانية التصفية والشراء"
+      },
+      {
+        "id": "shopping_cart",
+        "name": "سلة التسوق المصغرة",
+        "components": [
+          "قائمة المنتجات المضافة",
+          "زر تعديل الكمية",
+          "حساب المجموع الجزئي",
+          "زر اتمام الشراء"
+        ],
+        "purpose": "مراجعة المنتجات المختارة قبل اتمام عملية الدفع"
+      },
+      {
+        "id": "contact_section",
+        "name": "تواصل معنا",
+        "components": [
+          "نموذج مراسلة العملاء",
+          "معلومات التواصل المباشر",
+          "أيقونات وسائل التواصل الاجتماعي",
+          "خريطة الموقع"
+        ],
+        "purpose": "دعم العملاء وتسهيل التواصل والاستفسارات"
+      }
+    ],
+    "constraints": {
+      "rtl": true,
+      "responsive": true,
+      "language": "ar",
+      "max_lines": 1000
+    }
+  },
+  "report": {
+    "verdict": "PASS",
+    "score": "15/15",
+    "checks": {
+      "doctype": true,
+      "lang_ar": true,
+      "rtl": true,
+      "has_style": true,
+      "responsive": true,
+      "arabic": true,
+      "div_balance": true,
+      "title": true,
+      "viewport": true,
+      "line_count": true,
+      "section_navigation_bar": true,
+      "section_hero_banner": true,
+      "section_product_catalog": true,
+      "section_shopping_cart": true,
+      "section_contact_section": true
+    },
+    "errors": [],
+    "line_count": 428
+  }
+}

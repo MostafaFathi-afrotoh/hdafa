@@ -1,0 +1,90 @@
+{
+  "schema": {
+    "page_id": "restaurant_page",
+    "page_title": "مطعم النكهات الأصيلة",
+    "sections": [
+      {
+        "id": "hero_section",
+        "name": "الواجهة الرئيسية",
+        "components": [
+          "صورة ترويجية كبيرة",
+          "عنوان ترحيب",
+          "زر اطلب الآن"
+        ],
+        "purpose": "جذب انتباه الزوار وإبراز هوية المطعم."
+      },
+      {
+        "id": "menu_section",
+        "name": "قائمة الطعام",
+        "components": [
+          "تصنيفات الأطباق",
+          "بطاقات الوجبات مع الأسعار",
+          "صور الأطباق",
+          "زر إضافة إلى السلة"
+        ],
+        "purpose": "عرض الأطباق المتاحة للعملاء لتسهيل الاختيار."
+      },
+      {
+        "id": "reservation_section",
+        "name": "حجز طاولة",
+        "components": [
+          "تقويم اختيار التاريخ",
+          "قائمة اختيار الوقت",
+          "حقل عدد الأشخاص",
+          "زر تأكيد الحجز"
+        ],
+        "purpose": "تمكين العملاء من حجز طاولاتهم مسبقاً بكل سهولة."
+      },
+      {
+        "id": "about_section",
+        "name": "من نحن",
+        "components": [
+          "نبذة عن تاريخ المطعم",
+          "صورة الشف الرئيسي",
+          "قيم الجودة والخدمة"
+        ],
+        "purpose": "بناء الثقة مع العملاء وتعريفهم بقصة المطعم."
+      },
+      {
+        "id": "contact_section",
+        "name": "تواصل معنا",
+        "components": [
+          "نموذج مراسلة مباشر",
+          "معلومات الاتصال ورقم الهاتف",
+          "خريطة الموقع",
+          "روابط منصات التواصل الاجتماعي"
+        ],
+        "purpose": "تسهيل التواصل بين العملاء وإدارة المطعم ومعرفة الموقع."
+      }
+    ],
+    "constraints": {
+      "rtl": true,
+      "responsive": true,
+      "language": "ar",
+      "max_lines": 1000
+    }
+  },
+  "report": {
+    "verdict": "PASS",
+    "score": "15/15",
+    "checks": {
+      "doctype": true,
+      "lang_ar": true,
+      "rtl": true,
+      "has_style": true,
+      "responsive": true,
+      "arabic": true,
+      "div_balance": true,
+      "title": true,
+      "viewport": true,
+      "line_count": true,
+      "section_hero_section": true,
+      "section_menu_section": true,
+      "section_reservation_section": true,
+      "section_about_section": true,
+      "section_contact_section": true
+    },
+    "errors": [],
+    "line_count": 532
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "verdict": "PASS",
+  "score": "15/15",
+  "passed": 15,
+  "total": 15,
+  "checks": {
+    "doctype": true,
+    "lang_ar": true,
+    "rtl": true,
+    "has_style": true,
+    "responsive": true,
+    "navbar": true,
+    "hero": true,
+    "products": true,
+    "cart": true,
+    "contact": true,
+    "arabic": true,
+    "div_balance": true,
+    "line_count": true,
+    "title": true,
+    "viewport": true
+  },
+  "errors": [],
+  "line_count": 402,
+  "timestamp": "2026-09-10T19:48:26.615931"
+}

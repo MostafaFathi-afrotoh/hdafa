@@ -1,0 +1,23 @@
+{
+  "score": "15/15",
+  "verdict": "PASS",
+  "checks": {
+    "doctype": true,
+    "html_lang": true,
+    "rtl": true,
+    "viewport": true,
+    "title": true,
+    "has_style": true,
+    "has_body": true,
+    "div_balance": true,
+    "has_arabic": true,
+    "section::hero_banner": true,
+    "section::signature_beans": true,
+    "section::brewing_tools": true,
+    "section::roastery_story": true,
+    "section::customer_reviews": true,
+    "line_count": true
+  },
+  "failed": [],
+  "lines": 475
+}

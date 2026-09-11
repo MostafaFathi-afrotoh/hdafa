@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر البن المختص</title>
+    <style>
+        :root {
+            --primary-color: #6F4E37;
+            --primary-dark: #4A3323;
+            --accent-color: #C88A58;
+            --bg-cream: #F5E6D3;
+            --bg-light: #FCF9F5;
+            --text-dark: #2C221E;
+            --text-light: #FFFFFF;
+            --border-color: #E2D2BE;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navbar Section */
+        #navbar_section {
+            background-color: var(--text-light);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(111, 78, 55, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand_logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav_links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav_links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav_links a:hover {
+            color: var(--accent-color);
+        }
+
+        .cart_icon_badge {
+            background-color: var(--bg-cream);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            color: var(--primary-color);
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Hero Section */
+        #hero_section {
+            background: linear-gradient(rgba(111, 78, 55, 0.8), rgba(74, 51, 35, 0.85)), url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: var(--text-light);
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero_title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero_description {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: var(--bg-cream);
+        }
+
+        .cta_button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 0.8rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta_button:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Products Section */
+        #products_section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+        }
+
+        .product_grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product_card {
+            background: var(--text-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .product_card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(111, 78, 55, 0.1);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 200px;
+            background-color: var(--bg-cream);
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .product-price {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .add-to-cart-btn {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Cart Section */
+        #cart_section {
+            background-color: var(--bg-cream);
+            padding: 4rem 2rem;
+        }
+
+        .cart-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--text-light);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .cart_items {
+            margin-bottom: 2rem;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .total_price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+            text-align: left;
+            border-top: 2px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        /* Contact Section */
+        #contact_section {
+            padding: 5rem 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact_form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: inherit;
+            background-color: var(--text-light);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .submit_button {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .submit_button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav_links {
+                display: none;
+            }
+            .hero_title {
+                font-size: 2.25rem;
+            }
+            .nav-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <header id="navbar_section">
+        <nav class="nav-container">
+            <a href="#" class="brand_logo">محامص البن المختص</a>
+            <ul class="nav_links">
+                <li><a href="#hero_section">الرئيسية</a></li>
+                <li><a href="#products_section">المنتجات</a></li>
+                <li><a href="#cart_section">السلة</a></li>
+                <li><a href="#contact_section">تواصل معنا</a></li>
+            </ul>
+            <div class="cart_icon_badge">
+                🛒 <span>السلة (2)</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero_section">
+            <div class="hero-content">
+                <h1 class="hero_title">رحلة القهوة المختصة تبدأ من هنا</h1>
+                <p class="hero_description">نختار لك أجود حبوب البن من أعالي الجبال ونحمصها بعناية فائقة لتستمتع بكوب قهوة استثنائي كل صباح.</p>
+                <a href="#products_section" class="cta_button">تصفح المنتجات</a>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products_section">
+            <h2 class="section-title">محاصيلنا المميزة</h2>
+            <div class="product_grid">
+                <!-- Product Card 1 -->
+                <div class="product_card">
+                    <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=500&q=80" alt="إثيوبيا يirgacheffe" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">إثيوبيا يقاتشيفي</h3>
+                        <p class="product-desc">إيحاءات فاكهية وزهرية واضحة، معالجة مجففة تناسب الفلتر والإسبريسو.</p>
+                        <div class="product-footer">
+                            <span class="product-price">55 ر.س</span>
+                            <button class="add-to-cart-btn">أضف للسلة</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product_card">
+                    <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?auto=format&fit=crop&w=500&q=80" alt="كولومبيا هويلا" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">كولومبيا هويلا</h3>
+                        <p class="product-desc">إيحاءات الشوكولاتة الداكنة والكراميل، قوام ممتتلئ ومتوازن.</p>
+                        <div class="product-footer">
+                            <span class="product-price">48 ر.س</span>
+                            <button class="add-to-cart-btn">أضف للسلة</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product_card">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" alt="بن خولاني سعودي" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">خولاني جازاني</h3>
+                        <p class="product-desc">من مزارع جنوب المملكة، محمص بعناية ليحافظ على الهوية العربية الأصيلة.</p>
+                        <div class="product-footer">
+                            <span class="product-price">65 ر.س</span>
+                            <button class="add-to-cart-btn">أضف للسلة</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Section -->
+        <section id="cart_section">
+            <div class="cart-container">
+                <h2 class="section-title" style="margin-bottom: 1.5rem; font-size: 1.75rem;">سلة الشراء</h2>
+                <div class="cart_items">
+                    <div class="cart-item">
+                        <div>
+                            <h4>إثيوبيا يقاتشيفي</h4>
+                            <p style="color: #666; font-size: 0.85rem;">الكمية: 1</p>
+                        </div>
+                        <span>55 ر.س</span>
+                    </div>
+                    <div class="cart-item">
+                        <div>
+                            <h4>كولومبيا هويلا</h4>
+                            <p style="color: #666; font-size: 0.85rem;">الكمية: 1</p>
+                        </div>
+                        <span>48 ر.س</span>
+                    </div>
+                </div>
+                <div class="total_price">
+                    المجموع الكلي: 103 ر.س
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact_section">
+            <h2 class="section-title" style="font-size: 1.75rem;">تواصل معنا</h2>
+            <form class="contact_form">
+                <div class="form-group">
+                    <label for="name">الاسم الكريم</label>
+                    <input type="text" id="name" placeholder="أدخل اسمك الكامل">
+                </div>
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني</label>
+                    <input type="email" id="email" placeholder="example@domain.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">رسالتك أو استفسارك</label>
+                    <textarea id="message" rows="4" placeholder="كيف يمكننا مساعدتك؟"></textarea>
+                </div>
+                <button type="submit" class="submit_button">إرسال الرسالة</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 متجر البن المختص. جميع الحقوق محفوظة.</p>
+    </footer>
+
+</body>
+</html>

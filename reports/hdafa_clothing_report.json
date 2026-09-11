@@ -1,0 +1,102 @@
+{
+  "schema": {
+    "page_id": "clothing_store",
+    "page_title": "متجر الملابس الإلكتروني",
+    "sections": [
+      {
+        "id": "header_section",
+        "name": "الرأسية والتنقل",
+        "components": [
+          "شعار المتجر",
+          "شريط البحث",
+          "أيقونة المفضلة",
+          "أيقونة سلة التسوق"
+        ],
+        "purpose": "تسهيل التنقل والوصول السريع للعناصر الأساسية"
+      },
+      {
+        "id": "hero_section",
+        "name": "الواجهة الرئيسية",
+        "components": [
+          "لافتة العروض الكبرى",
+          "زر التسوق الان",
+          "صور ترويجية متحركة"
+        ],
+        "purpose": "جذب انتباه المستخدم وإبراز العروض الحالية"
+      },
+      {
+        "id": "filter_section",
+        "name": "فلترة وبحث المنتجات",
+        "components": [
+          "قائمة الفئة",
+          "محدد السعر",
+          "فلتر المقاسات",
+          "خيارات الألوان"
+        ],
+        "purpose": "مساعدة المستخدم في تخصيص نتائج البحث والعثور على المنتجات المطلوبة بدقة"
+      },
+      {
+        "id": "products_section",
+        "name": "قائمة المنتجات",
+        "components": [
+          "بطاقة المنتج",
+          "صورة المنتج",
+          "سعر المنتج",
+          "زر إضافة إلى السلة"
+        ],
+        "purpose": "عرض المنتجات المتاحة بشكل جذاب وتسهيل شرائها"
+      },
+      {
+        "id": "cart_section",
+        "name": "سلة التسوق",
+        "components": [
+          "قائمة المنتجات المضافة",
+          "محدد الكمية",
+          "ملخص الطلب",
+          "زر إتمام الشراء"
+        ],
+        "purpose": "مراجعة المنتجات المختارة وحساب التكلفة الإجمالية قبل الدفع"
+      },
+      {
+        "id": "checkout_section",
+        "name": "بوابة الدفع",
+        "components": [
+          "إدخال عنوان الشحن",
+          "اختيار طريقة الدفع",
+          "تأكيد الطلب"
+        ],
+        "purpose": "إتمام عملية الشراء بشكل آمن وسلس"
+      }
+    ],
+    "constraints": {
+      "rtl": true,
+      "responsive": true,
+      "language": "ar",
+      "max_lines": 1000
+    }
+  },
+  "report": {
+    "verdict": "PASS",
+    "score": "16/16",
+    "checks": {
+      "doctype": true,
+      "lang_ar": true,
+      "rtl": true,
+      "has_style": true,
+      "responsive": true,
+      "arabic": true,
+      "div_balance": true,
+      "title": true,
+      "viewport": true,
+      "line_count": true,
+      "section_header_section": true,
+      "section_hero_section": true,
+      "section_filter_section": true,
+      "section_products_section": true,
+      "section_cart_section": true,
+      "section_checkout_section": true
+    },
+    "errors": [],
+    "line_count": 653
+  }
+}
